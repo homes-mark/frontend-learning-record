@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name, age, skill) {
+            // this：指向对象本身
+            this.name = name
+            this.age = age
+            this.skill = skill
+            this.introduce = function() {
+                console.log("我是一名研二学生: " + this.name)
+            }
+        }
+
+        // 通过构造函数，创建对象 
+        // new Object()
+        let s1 = new Student("mark", 26, "加油")
+
+        // 上下对比
+        let s2 = new Student()   
+        s2.name = "aaaa"
+        s2.age = 20
+        s2.skill = "aass"
+        s2.introduce = function() {
+            console.log("xxxxxxx")
+        }
+
+        // console.log(s2.name)
+        s2.introduce()
+
+
+    </script>
+</body>
+</html>

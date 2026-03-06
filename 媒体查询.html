@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dataDiv {
+            width: 900px;
+            border: 1px solid salmon;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .box  {
+            width: 250px;
+            height: 200px;
+            background-color: antiquewhite;
+            margin-top: 10px;
+        }
+        /* max-width:1000px 最大宽度到多少的时候 0-1000px */
+        /* min-width:1000px 最小宽度到多少的时候 1000px--- */
+        /* 当屏幕尺寸小于600的时候，box颜色变橘色 */
+        /* @media screen and (max-width:600px) {
+            .box {
+                background-color: blue;
+            }
+        } */
+        /* 当屏幕尺寸大于600 小于1000的时候，紫色 */
+        /* @media screen and (min-width:600px) and (max-width:1000px) {
+            .box {
+                background-color: purple;
+            }
+        } */
+        @media screen and (max-width:600px) {
+            .dataDiv {
+                width: 480px;
+            }
+            .box {
+                background-color: orange;
+                width: 80%;
+            }
+        }
+        @media screen and (min-width:600px) and (max-width:1000px) {
+            .dataDiv {
+                width: 600px;
+            }
+            .box {
+                background-color: blueviolet;
+                width: 40%;
+            }
+        }
+        @media screen and (min-width:1000px) {
+            .dataDiv {
+                width: 900px;
+            }
+            .box {
+                background-color: skyblue;
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 核心：判断不同尺寸的时候，css用哪一套 -->
+    <div class="dataDiv">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
