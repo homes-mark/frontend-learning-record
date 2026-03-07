@@ -223,32 +223,6 @@
                 </div>
             </div>
 
-            <!-- rightDiv -->
-            <div class="rightDiv">
-                <div class="right1">鲁班</div>
-                <div class="right2">
-                    <div class="rightTime">17:26</div>
-                    <div class="rightContent">嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘</div>
-                </div>
-            </div>
-
-            <!-- rightDiv -->
-            <div class="rightDiv">
-                <div class="right1">鲁班</div>
-                <div class="right2">
-                    <div class="rightTime">17:26</div>
-                    <div class="rightContent">嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘</div>
-                </div>
-            </div>
-
-            <!-- rightDiv -->
-            <div class="rightDiv">
-                <div class="right1">鲁班</div>
-                <div class="right2">
-                    <div class="rightTime">17:26</div>
-                    <div class="rightContent">嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘嘘</div>
-                </div>
-            </div>
         </div>
 
         <div class="line"></div>
@@ -258,8 +232,40 @@
             <!-- 多行文本输入框 -->
             <textarea class="text" placeholder="请输入"></textarea>
             <!-- 发送按钮 -->
-            <button class="commit">发送</button>
+            <button class="commit" onclick="commit()">发送</button>
         </div>
     </div>
+
+    <script>
+        /*
+            1、onclick
+            2、获取标签
+                document.quertSelector(对应的选择器)
+            3、textarea.value代表输入框中的值
+            4、innerHTML 标签的字符串显示
+        */
+       // 获取多行输入框
+       let ttt = document.querySelector(".text")
+       let bodyDiv = document.querySelector(".bodyDiv")
+
+       function commit() {
+        console.log(bodyDiv.innerHTML)
+        // 可以拼接 innerHTML字符串
+        // 获取rigthDiv
+        let right = `<!-- rightDiv -->
+            <div class="rightDiv">
+                <div class="right1">鲁班</div>
+                <div class="right2">
+                    <div class="rightTime">17:26</div>
+                    <div class="rightContent">${ttt.value}</div>
+                </div>
+            </div>`
+
+        // 拼接innerHTML字符串
+        bodyDiv.innerHTML = bodyDiv.innerHTML + right
+        // 清空输入框内容
+        ttt.value = ""  
+       }
+    </script>
 </body>
 </html>
